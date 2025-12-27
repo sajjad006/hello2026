@@ -78,174 +78,140 @@ export default function Register() {
 	};
 
 	return (
-		<div className="flex min-h-screen items-center justify-center mt-10 px-4 md:px-8 lg:px-16 bg-transparent text-white">
-			<div className="hidden lg:flex flex-col text-center justify-center pt-12 pb-12 w-1/2">
-				<h1 className="text-5xl font-extrabold mb-4">From dark pits of oblivion to the hallows of glory,</h1>
-				<h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500">Begin this galactic event with a bang!</h1>
-			</div>
+		<div className="ocean-bg flex min-h-screen items-center justify-center px-4 md:px-8 lg:px-16 text-white drop-shadow-[0_0_10px_rgba(0,0,0,0.7)]">
 
+	
+			
+			<div className="hidden lg:flex flex-col text-center justify-center pt-12 pb-12 w-1/2">
+				<h1 className="text-5xl font-extrabold mb-4 leading-tight drop-shadow-xl text-white">
+					From dark pits of oblivion to the hallows of glory,
+				</h1>
+				<h1 className="text-5xl font-extrabold bg-clip-text text-transparent 
+	bg-gradient-to-r from-cyan-200 via-blue-300 to-purple-400 animate-pulse drop-shadow-[0_0_8px_rgba(0,0,0,0.6)]">
+
+					Begin this galactic event with a bang!
+				</h1>
+			</div>
+	
+			
 			<div className="w-full sm:w-96 lg:w-1/2 flex justify-center">
-				<Card className="w-full max-w-md shadow-md backdrop-blur-3xl bg-transparent text-white">
+			<Card className="w-full max-w-md shadow-2xl border border-white/30 
+	backdrop-blur-2xl bg-white/20 hover:bg-white/30 transition-all duration-500">
+
+					
 					<CardHeader>
-						<CardTitle className="text-center text-2xl font-bold">Register</CardTitle>
+						<CardTitle className="text-center text-3xl font-extrabold tracking-wide drop-shadow-lg">
+							Register
+						</CardTitle>
 					</CardHeader>
+	
 					<CardContent>
 						<Form {...useForm<RegisterData>()}>
 							<form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+	
+								
 								<FormField control={control} name="name" render={({ field }) => (
 									<FormItem>
 										<FormControl>
-											<Input {...field} placeholder="Enter your name"  {...register("name", { required: "Name is required" })} />
+											<Input {...field} placeholder="Enter your name"
+												className="bg-white/30 text-white placeholder-white/80 border-white/40 focus:border-cyan-300" />
 										</FormControl>
 										<FormMessage>{errors.name?.message}</FormMessage>
 									</FormItem>
 								)} />
-
-								<FormField
-									control={control}
-									name="email"
-									render={({ field }) => (
-										<FormItem>
-											<FormControl>
-												<Input
-													{...field}
-													type="email"
-													placeholder="Enter your email"
-													{...register("email", {
-														required: "Email is required",
-														validate: (value: string) =>
-															validator.isEmail(value) || "Invalid email format",
-													})}
-												/>
-											</FormControl>
-											<FormMessage>{errors.email?.message}</FormMessage>
-										</FormItem>
-									)}
-								/>
-
+	
+								<FormField control={control} name="email" render={({ field }) => (
+									<FormItem>
+										<FormControl>
+											<Input {...field} type="email" placeholder="Enter your email"
+												className="bg-white/30 text-white placeholder-white/80 border-white/40 focus:border-cyan-300" />
+										</FormControl>
+										<FormMessage>{errors.email?.message}</FormMessage>
+									</FormItem>
+								)} />
+	
 								<FormField control={control} name="phone" render={({ field }) => (
 									<FormItem>
 										<FormControl>
 											<Input {...field} placeholder="Enter your phone number"
-												{...register("phone",
-													{
-														required: "Phone number is required",
-														validate: (value: string) =>
-															validator.isMobilePhone(value, 'any') || "Invalid phone number format",
-													})}
-											/>
+												className="bg-white/30 text-white placeholder-white/80 border-white/40 focus:border-cyan-300" />
 										</FormControl>
 										<FormMessage>{errors.phone?.message}</FormMessage>
 									</FormItem>
 								)} />
-
+	
 								<FormField control={control} name="department" render={({ field }) => (
 									<FormItem>
 										<FormControl>
-											<Input {...field} placeholder="Enter your department" {...register("department", { required: "Department is required" })} />
+											<Input {...field} placeholder="Enter your department"
+												className="bg-white/30 text-white placeholder-white/80 border-white/40 focus:border-cyan-300" />
 										</FormControl>
 										<FormMessage>{errors.department?.message}</FormMessage>
 									</FormItem>
 								)} />
-
+	
 								<FormField control={control} name="year" render={({ field }) => (
 									<FormItem>
 										<FormControl>
-											<Input {...field} placeholder="Enter your year" {...register("year", { required: "Year is required" })} />
+											<Input {...field} placeholder="Enter your year"
+												className="bg-white/30 text-white placeholder-white/80 border-white/40 focus:border-cyan-300" />
 										</FormControl>
 										<FormMessage>{errors.year?.message}</FormMessage>
 									</FormItem>
 								)} />
-
-								<FormField
-									control={control}
-									name="password"
-									render={({ field }) => (
-										<FormItem>
-											<FormControl>
-												<div className="relative">
-
-													<Input
-														{...field}
-														type={showPassword ? "text" : "password"}
-														placeholder="Enter your password"
-														{...register("password", {
-															required: "Password is required",
-															minLength: { value: 6, message: "Must be at least 6 characters" },
-														})}
-													/>
-													<button
-														type="button"
-														className="absolute inset-y-0 right-2 flex items-center text-gray-400 hover:text-gray-200"
-														onClick={() => setShowPassword(!showPassword)}
-													>
-														{showPassword ? <AiOutlineEyeInvisible size={20} /> : <AiOutlineEye size={20} />}
-													</button>
-												</div>
-											</FormControl>
-											<FormMessage>{errors.password?.message}</FormMessage>
-										</FormItem>
-									)}
-								/>
-
-								<FormField
-									control={control}
-									name="confirmPassword"
-									render={({ field }) => (
-										<FormItem>
-											<FormControl>
-												<div className="relative">
-													<Input
-														{...field}
-														type={showConfirmPassword ? "text" : "password"}
-														placeholder="Confirm your password"
-														{...register("confirmPassword", {
-															required: "Please confirm your password",
-															validate: (value) =>
-																value === watch("password") || "Passwords do not match",
-														})}
-													/>
-													<button
-														type="button"
-														className="absolute inset-y-0 right-2 flex items-center text-gray-400 hover:text-gray-200"
-														onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-													>
-														{showConfirmPassword ? <AiOutlineEyeInvisible size={20} /> : <AiOutlineEye size={20} />}
-													</button>
-												</div>
-											</FormControl>
-											<FormMessage>{errors.confirmPassword?.message}</FormMessage>
-										</FormItem>
-									)}
-								/>
-
-								<Button type="submit" className="cursor-pointer w-full" disabled={!isValid || loading}>
-									{loading ? "Registering you in..." : "Register"}
+	
+								
+								<FormField control={control} name="password" render={({ field }) => (
+									<FormItem>
+										<FormControl>
+											<div className="relative">
+												<Input {...field} type={showPassword ? "text" : "password"}
+													placeholder="Enter your password"
+													className="bg-white/30 text-white placeholder-white/80 border-white/40 focus:border-cyan-300" />
+												<button type="button" className="absolute right-2 top-2 opacity-70"
+													onClick={() => setShowPassword(!showPassword)}>
+													{showPassword ? <AiOutlineEyeInvisible size={20}/> : <AiOutlineEye size={20}/>}
+												</button>
+											</div>
+										</FormControl>
+										<FormMessage>{errors.password?.message}</FormMessage>
+									</FormItem>
+								)} />
+	
+								<FormField control={control} name="confirmPassword" render={({ field }) => (
+									<FormItem>
+										<FormControl>
+											<div className="relative">
+												<Input {...field} type={showConfirmPassword ? "text" : "password"}
+													placeholder="Confirm your password"
+													className="bg-white/30 text-white placeholder-white/80 border-white/40 focus:border-cyan-300" />
+												<button type="button" className="absolute right-2 top-2 opacity-70"
+													onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+													{showConfirmPassword ? <AiOutlineEyeInvisible size={20}/> : <AiOutlineEye size={20}/>}
+												</button>
+											</div>
+										</FormControl>
+										<FormMessage>{errors.confirmPassword?.message}</FormMessage>
+									</FormItem>
+								)} />
+	
+								<Button type="submit"
+									className="cursor-pointer w-full font-bold text-lg py-2 hover:scale-[1.03] transition-all"
+									disabled={!isValid || loading}>
+									{loading ? "Registering..." : "Register"}
 								</Button>
 							</form>
 						</Form>
-						{/* <div className="relative flex items-center my-4">
-							<div className="w-full border-b border-gray-300"></div>
-							<span className="px-3 text-sm text-gray-500">OR</span>
-							<div className="w-full border-b border-gray-300"></div>
-						</div> */}
-
-						{/*oauth, will implement after reading docs if time permits*/}
-						{/* <div className="flex mt-4 flex-col gap-3">
-							<Button variant="outline" className="w-full flex items-center text-black *:justify-center gap-2 cursor-pointer">
-								<FcGoogle className="text-xl" /> Continue with Google
-							</Button>
-						</div> */}
-
+	
 						<p className="mt-4 text-center text-sm">
 							Already Registered?{" "}
-							<Link href="/login" className="text-blue-300 hover:underline">
-								Login
-							</Link>
+							<Link href="/login" className="text-cyan-300 hover:underline">Login</Link>
 						</p>
 					</CardContent>
 				</Card>
 			</div>
+	
 		</div>
 	);
+	
 }

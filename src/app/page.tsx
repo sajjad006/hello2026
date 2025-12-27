@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
 	return (
-		<div className=" flex flex-col justify-items-center min-h-screen p-8 font-[var(--font-geist-sans)] text-center">
+		<div className="ocean-bg min-h-screen flex flex-col items-center p-8 text-center bg-gradient-to-b from-[#003f5c] via-[#046b8a] to-[#05a2c2] text-white">
 
 			<main className="flex flex-col gap-4 font-bold text-xl sm:text-2xl items-center" style={{ alignItems: "center", height: "200px" }}>
 				<Image
@@ -10,34 +10,36 @@ export default function Home() {
 					alt="IEEE JUSB Logo"
 					width={250}
 					height={250}
-					className="rounded-lg pt-20"
+					className="rounded-lg pt-20 drop-shadow-xl"
 				/>
-				<span className="font-medium sm:text-xl md:text-2xl">presents</span>
+				<span className="font-medium text-[#c7f4ff] sm:text-xl md:text-2xl">presents</span>
 			</main>
 
-			<div className="bg-gradient-to-r text-4xl sm:text-6xl md:text-8xl font-extrabold from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-gradient pt-15 pb-15">
+			<div className="text-4xl sm:text-6xl md:text-8xl font-extrabold 
+				bg-gradient-to-r from-[#ced0f0] via-[#100abb] to-[#2f51e7]
+				text-transparent bg-clip-text drop-shadow-lg animate-pulse pt-6 pb-6 mt-7">
 				Hello IEEE 2026
 			</div>
 
-			<div className="pr-20 pl-20 mb-10 font-semibold text-xl md:text-2xl z-10 lg:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-600  to-white">
+			<div className="pr-6 pl-6 md:pr-20 md:pl-20 mb-10 font-semibold text-xl md:text-2xl z-10 lg:text-3xl 
+				bg-clip-text text-transparent bg-gradient-to-b from-[#e2faff] to-white drop-shadow-sm">
 				Dive into the world where dreams become true, hand in hand with us as we attempt to enlighten your path!
 			</div>
 
 			<div className="flex justify-center">
 				<a
-					className="cursor-pointer 
-							   border-2 border-white hover:border-blue-500
-							   justify-items-center rounded-full w-30
-							   bg-black p-4 pl-4
-							   transition-all duration-300
-							   shadow-[0_0_15px_15px_rgba(157,23,77,1)]"
+					className="cursor-pointer border-2 border-[#a9e8ff] hover:border-white
+					rounded-full px-6 py-3 font-bold
+					bg-white/10 backdrop-blur-sm text-white hover:text-[#eaffff]
+					transition-all duration-300 hover:shadow-[0_0_20px_5px_rgba(0,204,255,0.6)] hover:scale-105"
 					href="/register"
 				>
 					Register!
 				</a>
 			</div>
-			<p className="mt-10 text-xl font-semibold text-center text-gray-1	00 dark:text-gray-200">
-				<span className="text-gradient">15.01.2026</span> @Triguna Sen Auditorium
+
+			<p className="mt-10 text-xl font-semibold text-center text-[#d9faff] drop-shadow-sm">
+				<span className="text-[#b9ffff] font-extrabold">15.01.2026</span> @Triguna Sen Auditorium
 			</p>
 		</div>
 	);

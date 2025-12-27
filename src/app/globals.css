@@ -135,3 +135,16 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.ocean-bg {
+	background: linear-gradient(120deg,#001f3f,#006daa,#00b8d4,#0097b2,#023e8a);
+	background-size: 400% 400%;
+	animation: oceanFlow 15s ease infinite;
+}
+
+@keyframes oceanFlow {
+	0%{background-position:0% 50%;}
+	50%{background-position:100% 50%;}
+	100%{background-position:0% 50%;}
+}
+
