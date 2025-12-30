@@ -1,93 +1,95 @@
 import { Card } from "@/components/ui/card"
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel"
 
-export default function About() {
+export default function AboutSection() {
+    const events = [
+        {
+            id: 1,
+            name: "Double // Slash",
+            image: "/about/doubleslash.png",
+            description: "Double Slash, organised by IEEE JUSB is Jadavpur University's first ever offline 24 hour hackathon. Here different tracks are provided for the participants. Double Slash attracts uniqueness and creativity packaged in the form of coding and reasoning. IEEE JUSB is going to soon present Double Slash with a bang, so interested participants may as well start to gear up!"
+        },
+        {
+            id: 2,
+            name: "TechX",
+            image: "/about/techX.png",
+            description: "IEEE JUSB is the proud pioneer of TechX Congress which has become a global sensation since. The second edition took place in Shantiniketan and featured talks on diverse topics and an extensive workshop on augmented reality. Stuffed with hackathons and quizzes, this was undoubtedly IEEE JUSB's one of the most enriching and enjoyable events!"
+        },
+        {
+            id: 3,
+            name: "EarthXChange",
+            image: "/about/earthXchange.png",
+            description: "EarthXChange served as a platform to address rising concerns on climate changes and global issues. Insightful talks from industry experts along with competitions and hackathons with different tracks centred on climate sustainability served to stimulate the technical acumen of aspiring students!"
+        },
+        {
+            id: 4,
+            name: "MLAS",
+            image: "/about/mlas.png",
+            description: "Machine Learning Accelerator Summit is an event solely dedicated to providing the participants with a strong foundation in Machine Learning. With sessions on python, hands on workshops on machine learning and deep learning and contests the event provided the participants the thrust for them to move forward in their quest of Machine Learning."
+        },
+        {
+            id: 5,
+            name: "Cypher 3331",
+            image: "/about/cypher.png",
+            description: "Organised by IEEE JUSB at Jadavpur University's annual tech - fest Srijan, Cypher is an exhilirating event based on cryptography and the art of coding and decoding, inviting more than 700 registrations in a span of only 24 hours . Paricipants were taught about different cyphers and challenged with brain storming questions, with the level advancing in later rounds."
+        }
+    ]
+
     return (
-        <div className="ocean-bg min-h-screen w-full bg-gradient-to-b from-[#003f5c] via-[#046b8a] to-[#05a2c2] text-white">
-            <div className="flex flex-col font-extrabold text-4xl lg:text-5xl items-center pt-24 pb-2 drop-shadow-lg tracking-wide">
-                ABOUT US
+        <div className="min-h-screen w-full bg-gradient-to-b from-[#003f5c] via-[#046b8a] to-[#05a2c2] text-white py-16 px-4">
+            {/* Header */}
+            <div className="flex flex-col font-extrabold text-5xl lg:text-6xl items-center mb-16 drop-shadow-2xl tracking-wide">
+                <div className="relative">
+                    <span className="bg-gradient-to-r from-[#a9e8ff] to-white bg-clip-text text-transparent">
+                        ABOUT US
+                    </span>
+                    <div className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#a9e8ff] to-transparent"></div>
+                </div>
             </div>
 
-            <div className="ml-10 mr-10 flex flex-col items-center md:flex-row">
-                <div className="md:m-10">
-                    <Carousel className="w-full max-w-xs">
-                        <CarouselContent>
-                            <CarouselItem key="1">
-                                <div className="p-1">
-                                    <Card className="bg-cover bg-[url('/about/doubleslash.png')] bg-center h-[300px] rounded-xl shadow-lg shadow-[#022c3d]/70" />
-                                    <div className="p-6 text-center bg-[#022c3d]/20 backdrop-blur-sm rounded-xl mt-3">
-                                        <div className="text-lg font-bold text-[#a9e8ff]">Double // Slash</div>
-                                        <span className="text-sm text-[#e3faff]">
-                                            Double Slash, organised by IEEE JUSB is Jadavpur University&apos;s first ever offline 24 hour hackathon. Here different tracks are provided for the participants. Double Slash attracts uniqueness and creativity packaged in the form of coding and reasoning. IEEE JUSB is going to soon present Double Slash with a bang, so interested participants may as well start to gear up!
-                                        </span>
-                                    </div>
-                                </div>
-                            </CarouselItem>
-
-                            <CarouselItem key="2">
-                                <div className="p-1">
-                                    <Card className="bg-cover bg-[url('/about/techX.png')] bg-center h-[300px] rounded-xl shadow-lg shadow-[#022c3d]/70" />
-                                    <div className="p-6 text-center bg-[#022c3d]/20 backdrop-blur-sm rounded-xl mt-3">
-                                        <div className="text-lg font-bold text-[#a9e8ff]">TechX</div>
-                                        <span className="text-sm text-[#e3faff]">
-                                            IEEE JUSB is the proud pioneer of TechX Congress which has become a global sensation since. The second edition took place in Shantiniketan and featured talks on diverse topics and an extensive workshop on augmented reality. Stuffed with hackathons and quizzes, this was undoubtedly IEEE JUSB&apos;s one of the most enriching and enjoyable events!
-                                        </span>
-                                    </div>
-                                </div>
-                            </CarouselItem>
-
-                            <CarouselItem key="3">
-                                <div className="p-1">
-                                    <Card className="bg-cover bg-[url('/about/earthXchange.png')] bg-center h-[300px] rounded-xl shadow-lg shadow-[#022c3d]/70" />
-                                    <div className="p-6 text-center bg-[#022c3d]/20 backdrop-blur-sm rounded-xl mt-3">
-                                        <div className="text-lg font-bold text-[#a9e8ff]">EarthXChange</div>
-                                        <span className="text-sm text-[#e3faff]">
-                                            EarthXChange served as a platform to address rising concerns on climate changes and global issues. Insightful talks from industry experts along with competitions and hackathons with different tracks centred on climate sustainability served to stimulate the technical acumen of aspiring students!
-                                        </span>
-                                    </div>
-                                </div>
-                            </CarouselItem>
-
-                            <CarouselItem key="4">
-                                <div className="p-1">
-                                    <Card className="bg-cover bg-[url('/about/mlas.png')] bg-center h-[300px] rounded-xl shadow-lg shadow-[#022c3d]/70" />
-                                    <div className="p-6 text-center bg-[#022c3d]/20 backdrop-blur-sm rounded-xl mt-3">
-                                        <div className="text-lg font-bold text-[#a9e8ff]">MLAS</div>
-                                        <span className="text-sm text-[#e3faff]">
-                                            Machine Learning Accelerator Summit is an event solely dedicated to providing the participants with a strong foundation in Machine Learning. With sessions on python, hands on workshops on machine learning and deep learning and contests the event provided the participants the thrust for them to move forward in their quest of Machine Learning.
-                                        </span>
-                                    </div>
-                                </div>
-                            </CarouselItem>
-
-                            <CarouselItem key="5">
-                                <div className="p-1">
-                                    <Card className="bg-cover bg-[url('/about/cypher.png')] bg-center h-[300px] rounded-xl shadow-lg shadow-[#022c3d]/70" />
-                                    <div className="p-6 text-center bg-[#022c3d]/20 backdrop-blur-sm rounded-xl mt-3">
-                                        <div className="text-lg font-bold text-[#a9e8ff]">Cypher 3331</div>
-                                        <span className="text-sm text-[#e3faff]">
-                                            Organised by IEEE JUSB at Jadavpur University&apos;s annual tech - fest Srijan, Cypher is an exhilirating event based on cryptography and the art of coding and decoding, inviting more than 700 registrations in a span of only 24 hours . Paricipants were taught about different cyphers and challenged with brain storming questions, with the level advancing in later rounds.
-                                        </span>
-                                    </div>
-                                </div>
-                            </CarouselItem>
-                        </CarouselContent>
-
-                        <CarouselPrevious className="bg-[#ffffff20] hover:bg-[#ffffff40] text-white backdrop-blur-sm rounded-full" />
-                        <CarouselNext className="bg-[#ffffff20] hover:bg-[#ffffff40] text-white backdrop-blur-sm rounded-full" />
-                    </Carousel>
+            {/* Main Content */}
+            <div className="max-w-6xl mx-auto mb-20">
+                <div className="bg-white/15 backdrop-blur-md p-8 md:p-12 rounded-2xl shadow-2xl border border-white/20">
+                    <p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-justify">
+                        At IEEE JUSB, we're more than just a student chapter—we're a dynamic community of innovators, creators, and problem-solvers committed to driving change through collaboration. Founded in 2010 at one of the oldest and most prestigious universities in the country, JADAVPUR UNIVERSITY, we belong to the Kolkata section of Region 10. As one of the most active student branches in our section, we are there to support you every step of the way whether you're starting and eager to learn, ready to present your ideas, or passionate about diving into the world of technology or design. Through hands-on workshops, engaging seminars, and other large-scale events thriving throughout the year we intend to bridge the gap between knowledge and real-world application. Together, we spark the fire of learning and innovation, thus building a passionate community that stands on sharing ideas and making impacts!
+                    </p>
                 </div>
+            </div>
 
-                <div className="m-5 text-justify md:text-2xl md:m-15 bg-white/10 p-5 rounded-xl shadow-lg backdrop-blur-sm">
-                    At IEEE JUSB, we&apos;re more than just a student chapter—we&apos;re a dynamic community of innovators, creators, and problem-solvers committed to driving change through collaboration. Founded in 2010 at one of the oldest and most prestigious universities in the country, JADAVPUR UNIVERSITY, we belong to the Kolkata section of Region 10. As one of the most active student branches in our section, we are there to support you every step of the way whether you&apos;re starting and eager to learn, ready to present your ideas, or passionate about diving into the world of technology or design. Through hands-on workshops, engaging seminars, and other large-scale events thriving throughout the year we intend to bridge the gap between knowledge and real-world application. Together, we spark the fire of learning and innovation, thus building a passionate community that stands on sharing ideas and making impacts!
+            {/* Events Section */}
+            <div className="max-w-7xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#a9e8ff] drop-shadow-lg">
+                    Our Signature Events
+                </h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {events.map((event) => (
+                        <div 
+                            key={event.id}
+                            className="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-[#a9e8ff]/30 transition-all duration-500 hover:-translate-y-2"
+                        >
+                            {/* Image Container */}
+                            <div 
+                                className="h-64 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                style={{ backgroundImage: `url('${event.image}')` }}
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#022c3d] via-[#022c3d]/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            {/* Content */}
+                            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#022c3d] to-transparent">
+                                <h3 className="text-2xl font-bold text-[#a9e8ff] mb-3 drop-shadow-lg">
+                                    {event.name}
+                                </h3>
+                                <p className="text-sm text-[#e3faff] leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all duration-300">
+                                    {event.description}
+                                </p>
+                            </div>
+                            
+                            {/* Decorative corner accent */}
+                            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#a9e8ff]/20 to-transparent rounded-bl-full"></div>
+                        </div>
+                    ))}
                 </div>
-
             </div>
         </div>
     )
